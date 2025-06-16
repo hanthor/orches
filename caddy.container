@@ -5,6 +5,7 @@ PublishPort=4443:443
 PublishPort=4443:443/udp
 Volume=caddy-data:/data:Z
 Volume=%h/.config/orches/repo/Caddyfile:/etc/caddy/Caddyfile:z
+Volume=/var/run/tailscale/tailscaled.sock:/var/run/tailscale/tailscaled.sock:ro
 
 [Service]
 Restart=on-failure
