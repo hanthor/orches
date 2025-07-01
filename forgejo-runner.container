@@ -1,5 +1,5 @@
 [Container]
-Image=code.forgejo.org/forgejo/runner:latest
+Image=code.forgejo.org/forgejo/runner:6
 Environment=FORGEJO_INSTANCE_URL=http://localhost:8080
 Environment=FORGEJO_RUNNER_REGISTRATION_TOKEN=0SH62RjOByGwawIeR6upEEm4DMekA7QiB2M9a2cd
 Environment=FORGEJO_RUNNER_NAME=Bihar
