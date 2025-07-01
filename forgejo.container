@@ -10,7 +10,7 @@ Exec=bash -c '/usr/bin/s6-svscan /etc/s6 & && sleep 10 ; && su -c "forgejo forge
 
 [Service]
 Restart=on-failure
-ExecStartPre=-podman secret exists forgejo-shared-secret || openssl rand -hex 20 | podman secret create forgejo-shared-secret -
+ExecStartPre=podman secret exists forgejo-shared-secret || openssl rand -hex 20 | podman secret create forgejo-shared-secret -
 
 [Install]
 WantedBy=default.target
