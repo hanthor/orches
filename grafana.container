@@ -1,4 +1,5 @@
 [Container]
+ContainerName=grafana
 Image=docker.io/grafana/grafana-oss:12.0.1
 Volume=grafana-data:/var/lib/grafana:Z
 PublishPort=8081:3000

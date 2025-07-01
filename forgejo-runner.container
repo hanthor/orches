@@ -1,7 +1,8 @@
 [Container]
+ContainerName=forgejo-runner
 Image=code.forgejo.org/forgejo/runner:6
 Environment=FORGEJO_INSTANCE_URL=http://forgejo:8080
-Environment=FORGEJO_RUNNER_REGISTRATION_TOKEN=
+Environment=FORGEJO_RUNNER_REGISTRATION_TOKEN=0SH62RjOByGwawIeR6upEEm4DMekA7QiB2M9a2cd
 Environment=FORGEJO_RUNNER_NAME=Bihar
 Environment=FORGEJO_RUNNER_LABELS=x86_64,docker:docker://node:20-bullseye,self-hosted:host://-self-hosted,lxc:lxc://debian:bullseye
 Volume=/var/run/user/1000/podman/podman.sock:/var/run/docker.sock:Z

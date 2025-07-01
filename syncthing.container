@@ -1,4 +1,5 @@
 [Container]
+ContainerName=syncthing
 Image=lscr.io/linuxserver/syncthing:1.29.7
 Volume=syncthing-config:/config:Z
 Volume=syncthing-data:/data:Z
