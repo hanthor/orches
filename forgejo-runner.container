@@ -4,7 +4,7 @@ Environment=FORGEJO_INSTANCE_URL=http://localhost:8080
 Environment=FORGEJO_RUNNER_REGISTRATION_TOKEN=0SH62RjOByGwawIeR6upEEm4DMekA7QiB2M9a2cd
 Environment=FORGEJO_RUNNER_NAME=Bihar
 Environment=FORGEJO_RUNNER_LABELS=x86_64
-Volume=/var/lib/containers:/var/lib/containers:Z
+Volume=/var/run/user/1000/podman/podman.sock:/var/run/docker.sock:Z
 
 [Service]
 Restart=on-failure
