@@ -1,9 +1,9 @@
 [Container]
-Image=code.forgejo.org/forgejo/runner:6
-Environment=GITEA_INSTANCE_URL=localhost:8080
-Environment=GITEA_RUNNER_REGISTRATION_TOKEN=0SH62RjOByGwawIeR6upEEm4DMekA7QiB2M9a2cd
-Environment=GITEA_RUNNER_NAME=Bihar
-Environment=GITEA_RUNNER_LABELS=x86_64
+Image=code.forgejo.org/forgejo/runner:latest
+Environment=FORGEJO_INSTANCE_URL=http://localhost:8080
+Environment=FORGEJO_RUNNER_REGISTRATION_TOKEN=0SH62RjOByGwawIeR6upEEm4DMekA7QiB2M9a2cd
+Environment=FORGEJO_RUNNER_NAME=Bihar
+Environment=FORGEJO_RUNNER_LABELS=x86_64
 Volume=/var/lib/containers:/var/lib/containers:Z
 
 [Service]
