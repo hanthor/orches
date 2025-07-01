@@ -11,7 +11,7 @@ Exec=bash -c '(sleep 15 && su -c "forgejo forgejo-cli actions register --secret 
 
 [Service]
 Restart=on-failure
-ExecStartPre=podman secret exists forgejo-shared-secret || openssl rand -hex 20 | podman secret create forgejo-shared-secret -
+ExecStartPre=podman secret exists forgejo-shared-secret || openssl rand -hex 20 | tr -d '\n' | podman secret create forgejo-shared-secret -
 
 [Install]
 WantedBy=default.target
