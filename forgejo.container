@@ -6,7 +6,7 @@ PublishPort=2222:22
 Volume=forgejo-data:/data:Z
 Secret=forgejo-shared-secret,type=env,target=FORGEJO_SHARED_SECRET
 Environment=ROOT_PASSWORD=admin1234
-Exec=bash -c '/usr/bin/s6-svscan /etc/s6 & && sleep 10 ; && su -c "forgejo forgejo-cli actions register --secret $FORGEJO_SHARED_SECRET" git ; && su -c "forgejo admin user create --admin --username root --password $ROOT_PASSWORD --email root@example.com" git ; && sleep infinity'
+Exec=bash -c '(sleep 15 && su -c "forgejo forgejo-cli actions register --secret $FORGEJO_SHARED_SECRET" git && su -c "forgejo admin user create --admin --username root --password $ROOT_PASSWORD --email root@example.com" git) & exec /usr/bin/s6-svscan /etc/s6'
 
 [Service]
 Restart=on-failure
