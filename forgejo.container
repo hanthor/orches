@@ -1,4 +1,5 @@
 [Container]
+ContainerName=forgejo
 Image=codeberg.org/forgejo/forgejo:11.0.1
 PublishPort=8080:3000
 PublishPort=2222:22
