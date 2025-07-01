@@ -6,13 +6,14 @@ After=forgejo.service
 [Container]
 ContainerName=forgejo-runner
 Image=code.forgejo.org/forgejo/runner:6
+Network=forgejo.network
 Volume=forgejo-runner-data:/data:Z
 Volume=/var/run/user/1000/podman/podman.sock:/var/run/docker.sock:Z
 Secret=forgejo-shared-secret,type=env,target=FORGEJO_SHARED_SECRET
 Exec=bash -ec ' \
   echo "--> 1/3: Waiting to create runner registration file..."; \
   while : ; do \
-    forgejo-runner create-runner-file --connect --instance http://localhost:8080 --name runner --secret $FORGEJO_SHARED_SECRET && break ; \
+    forgejo-runner create-runner-file --connect --instance http://forgejo:8080 --name runner --secret $FORGEJO_SHARED_SECRET && break ; \
     echo "Registration failed, retrying in 1s..."; \
     sleep 1 ; \
   done ; \
