@@ -1,3 +1,8 @@
+[Unit]
+Description=Forgejo Runner Container
+Requires=forgejo.service
+After=forgejo.service
+
 [Container]
 ContainerName=forgejo-runner
 Image=code.forgejo.org/forgejo/runner:6
