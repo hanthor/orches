@@ -1,0 +1,14 @@
+[Container]
+Image=code.forgejo.org/forgejo/runner:6
+PublishPort=8080:3000
+Environment=GITEA_INSTANCE_URL=localhost:8080
+Environment=GITEA_RUNNER_REGISTRATION_TOKEN=0SH62RjOByGwawIeR6upEEm4DMekA7QiB2M9a2cd
+Environment=GITEA_RUNNER_NAME=Bihar
+Environment=GITEA_RUNNER_LABELS=x86_64
+Volume=/var/lib/contianers:/var/lib/contianers:Z
+
+[Service]
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
